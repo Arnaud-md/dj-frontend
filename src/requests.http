@@ -1,0 +1,40 @@
+GET http://localhost:1337/api/chanteurs
+
+###
+GET http://localhost:1337/api/musiques?populate=chanteur
+
+###
+POST http://localhost:1337/api/chanteurs
+content-type: application/json
+
+{
+    "data": {
+        "Nom": "Delpech",
+        "Prenom": "Michel",
+        "Date_de_naissance": "1946-01-26"
+    }
+}
+
+###
+POST http://localhost:1337/api/musiques
+content-type: application/json
+
+{
+    "data": {
+        "Titre": "Les plus grands succès",
+        "Lien_Youtube": "https://www.bing.com/videos/search?q=les+plus+grands+succ%c3%a8s+michel+delpech+youtube&refig=b53ba0ef4e0640b88771aef9df1e7d24&ru=%2fsearch%3fq%3dles%2bplus%2bgrands%2bsucc%25C3%25A8s%2bmichel%2bdelpech%2byoutube%26form%3dANNTH1%26refig%3db53ba0ef4e0640b88771aef9df1e7d24&view=detail&mmscn=vwrc&mid=B7356DC866A21362DC85B7356DC866A21362DC85&FORM=WRVORC",
+        "chanteur": 3,
+        "Favoris": true,
+        "Date_de_sortie": "2018-05-01",
+        "Couleur_de_fond": "#ADD8E6"
+    }
+}
+
+###
+POST  http://localhost:1337/api/auth/local
+content-type: application/json
+
+{
+    "identifier": "arnaud.laforgue@yahoo.com",
+    "password": "Ydfx=gekj1"
+}
